@@ -1,35 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement(
-      "h1",
-      { id: "heading" },
-      "Namaste React"
-    ),
-    React.createElement(
-      "h2",
-      { id: "center" },
-      "Hello it's H2 tag from child1"
-    ),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement(
-      "h1",
-      { id: "heading" },
-      "Hello it's H1 tag form child2"
-    ),
-    React.createElement(
-      "h2",
-      { id: "center" },
-      "Hello it's H2 tag from child2"
-    ),
-  ]),
-]);
+// React.createElement => object =>  HtmlElement(render)
 
+const heading = React.createElement("h1", { id: "heading" }, "Navin is here!");
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+console.log(heading);
+
+// JSX (transpiled before it reaches to JS) => Parcel - Babel
+// Babel convert JSX into Readable Js syntax
+// JSX => React.createElement (converted by BAbel) => ReactElement(JS Object) => HTMLElement(render)
+// JSX
+const jsxHeading = <h1 id="heading">Namaste Navin! 🚀</h1>;
+console.log(jsxHeading);
+// render will replace the code not append it
+root.render(jsxHeading);
 
 const months = [
   "January",
@@ -51,7 +36,6 @@ console.log(months[date.getMonth()]);
 const root1 = document.getElementById("root");
 
 document.body.addEventListener("keydown", (event) => {
-  console.log(event.key);
   switch (event.key) {
     case "a":
       document.body.style.backgroundColor = "blue";

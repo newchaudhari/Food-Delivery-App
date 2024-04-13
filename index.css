@@ -1,8 +1,12 @@
+body {
+    background-color: black;
+}
+
 #heading {
     color: red;
     text-align: center;
 }
 #center {
-    color: rgb(201, 169, 125);
+    color: #fff;
     text-align: center;
 }
