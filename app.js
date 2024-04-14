@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React.createElement => object =>  HtmlElement(render)
+//* React.createElement => object =>  HtmlElement(render)
 
 const heading = React.createElement("h1", { id: "heading" }, "Navin is here!");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(heading);
 
-// JSX (transpiled before it reaches to JS) => Parcel - Babel
-// Babel convert JSX into Readable Js syntax
-// JSX => React.createElement (converted by BAbel) => ReactElement(JS Object) => HTMLElement(render)
-// JSX
+//* JSX (transpiled before it reaches to JS) => Parcel - Babel
+//* Babel convert JSX into Readable Js syntax
+//* JSX => React.createElement (converted by BAbel) => ReactElement(JS Object) => HTMLElement(render)
+//* JSX
 const jsxHeading = <h1 id="heading">Namaste Navin! 🚀</h1>;
 console.log(jsxHeading);
-// render will replace the code not append it
+//* render will replace the code not append it
 root.render(jsxHeading);
 
 const months = [
