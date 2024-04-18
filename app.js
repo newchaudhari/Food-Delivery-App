@@ -9,31 +9,125 @@ console.log(heading);
 
 //* JSX (transpiled before it reaches to JS) => Parcel - Babel
 //* Babel convert JSX into Readable Js syntax
-//* JSX => React.createElement (converted by BAbel) => ReactElement(JS Object) => HTMLElement(render)
+//* JSX => Babel transpile it into React.createElement (converted by BAbel) => ReactElement(JS Object) => HTMLElement(render)
 //* JSX
+
+// React Element
 const jsxHeading = <h1 id="heading">Namaste Navin! 🚀</h1>;
 console.log(jsxHeading);
+
+// React Functional Component
+const Title = () => <h1 id="heading">Namaste Navin From title Tag</h1>;
+//* React Component => it is JS function that returns JSX
+//* Component Composition => combining smaller components together
+const Heading = () => {
+  return (
+    <div>
+      <Title />
+      <h1 id="heading">Namaste Navin from React Functional component 🚀</h1>;
+    </div>
+  );
+};
+
 //* render will replace the code not append it
-root.render(jsxHeading);
+//* To render functional component we need to use angular brackets
+root.render(<Heading />);
 
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let date = new Date();
-console.log(months[date.getMonth()]);
 
-const root1 = document.getElementById("root");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 document.body.addEventListener("keydown", (event) => {
   switch (event.key) {
