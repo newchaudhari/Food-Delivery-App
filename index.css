@@ -1,12 +1,70 @@
 body {
-    background-color: black;
+  background-color: white;
+  color: black;
 }
 
-#heading {
-    color: red;
-    text-align: center;
+.logo {
+  width: 100px;
 }
-#center {
-    color: #fff;
-    text-align: center;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+}
+
+.nav-items > ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-items > ul > li {
+  margin: 5px;
+  padding: 0 10px;
+  font-size: 24px;
+}
+
+.nav-items > ul > li:hover {
+  cursor: pointer;
+  color: red;
+}
+.body {
+  margin: 10px 0;
+  border: 1px solid maroon;
+  padding: 10px;
+  background-color: rgb(219, 255, 233);
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+.search > input {
+  font-size: 15px;
+  padding: 5px;
+  width: 200px;
+}
+.card {
+  margin: 8px;
+  padding: 5px;
+  width: 200px;
+  height: 300px;
+}
+.card > img {
+  width: 100%;
+}
+.card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: #f0f0f0;
+}
+.rest-container {
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
