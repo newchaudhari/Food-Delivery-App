@@ -16,3 +16,34 @@
 - HTTPS
 - Tree Shaking - remove unused code
 - Different dev and prod bundled 
+
+
+
+// Food Delivery App
+
+/*
+* Header
+  - Logo
+  - Nav Items
+* Body
+  - Search
+  - RestaurantContainer
+  - RestaurantCard
+* Footer
+  - copyright
+  - Address
+  - Links
+  - Contacts
+*/
+
+   
+Two types of Export/Import
+
+- Default Export/Import 
+    export default Component;
+    import Component from "Path";
+
+- Named Export/Import
+    export const Component;
+    import {Component} from "Path";
+
