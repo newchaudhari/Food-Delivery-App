@@ -1,6 +1,11 @@
+
 body {
   background-color: white;
   color: black;
+}
+
+.app > h1{
+  text-align: center;
 }
 
 .logo {
@@ -34,7 +39,7 @@ body {
 }
 .body {
   margin: 10px 0;
-  border: 1px solid maroon;
+  border: 1px solid #0100ff;
   padding: 10px;
   background-color: rgb(219, 255, 233);
 }
