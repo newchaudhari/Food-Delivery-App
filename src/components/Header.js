@@ -19,7 +19,6 @@ const Header = () => {
             className="login-btn"
             onClick={() => {
               btn === "Login" ? setBtn("Logout") : setBtn("Login");
-              console.log(btn);
             }}
           >
             {btn}
