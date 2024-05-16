@@ -33,6 +33,15 @@ body {
   padding: 0 10px;
   font-size: 24px;
 }
+.link{
+  text-decoration: none;
+  color: black;
+
+}
+.nav-items > ul > li > .link:hover {
+  cursor: pointer;
+  color: red;
+}
 
 .nav-items > ul > li:hover {
   cursor: pointer;
@@ -172,10 +181,8 @@ input {
 }
 
 .responsive-container-block.bigContainer {
-  padding-top: 10px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  padding-left: 30px;
+  margin: 10px 0;
+  padding: 10px;
   background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb29.png");
   background-position-x: initial;
   background-position-y: initial;
