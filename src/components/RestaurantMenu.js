@@ -34,7 +34,6 @@ const RestaurantMenu = () => {
       <h3> </h3>
       <h1>Menu</h1>
       <ul>
-        <li>{itemCards[0]?.card?.info?.name}</li>
         {itemCards.map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} - {"₹ "} {item?.card?.info?.price / 100}
