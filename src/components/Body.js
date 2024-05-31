@@ -34,16 +34,17 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
-    return (<h1>Looks like you are offline!! Please check your connection</h1>)
+    return <h1>Looks like you are offline!! Please check your connection</h1>;
   }
 
   return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div>
+      <div className="filter flex justify-center">
+        <div className="p-4 m-4">
           <input
+            className="px-2 py-1 border border-solid border-black"
             type="text"
             placeholder="Search...."
             value={searchText}
@@ -52,7 +53,7 @@ const Body = () => {
             }}
           />
           <button
-            className="search-btn"
+            className="px-4 py-1 bg-green-100 m-4 rounded-sm"
             onClick={() => {
               const filteredList = restaurantList.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -63,19 +64,21 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const topRatedList = restaurantList.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setFilteredRestaurant(topRatedList);
-          }}
-        >
-          Top Rated
-        </button>
+        <div className="p-4 m-4 flex items-center">
+          <button
+            className="filter-btn px-4 py-1 bg-gray-200 m-4 rounded-sm"
+            onClick={() => {
+              const topRatedList = restaurantList.filter(
+                (res) => res.info.avgRating > 4
+              );
+              setFilteredRestaurant(topRatedList);
+            }}
+          >
+            Top Rated
+          </button>
+        </div>
       </div>
-      <div className="rest-container">
+      <div className="flex flex-wrap justify-center">
         {filteredRestaurant.map((restaurant) => (
           <Link
             className="link"
