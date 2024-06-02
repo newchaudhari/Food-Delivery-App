@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
     resData?.info;
 
   return (
-    <div className="m-2 p-3 w-[250px] bg-gray-100 hover:bg-gray-300">
+    <div className="m-2 p-3 w-[250px] h-[450px] border-gray-50 rounded-lg shadow-lg bg-gray-100 hover:bg-gray-300">
       <img
         className="w-full h-[200px] rounded-sm"
         src={CDN_URL + cloudinaryImageId}
@@ -19,6 +19,19 @@ const RestaurantCard = (props) => {
       <h4>{sla.slaString}</h4>
     </div>
   );
+};
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-gray-700 text-white py-1 px-2 rounded-lg">
+          Opened
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
