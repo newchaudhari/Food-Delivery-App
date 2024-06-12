@@ -85,12 +85,14 @@ const Body = () => {
               type="text"
               className="border border-solid border-black px-2 py-1"
               value={loggedInUser}
-              onChange={(e) => {setUserName(e.target.value)}}
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
             />
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap m-2">
         {filteredRestaurant.map((restaurant) => (
           <Link
             className="link"

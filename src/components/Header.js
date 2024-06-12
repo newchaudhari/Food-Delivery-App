@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import logo from "../assets/images/logo.png";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
@@ -15,7 +16,7 @@ const Header = () => {
     <div className="flex justify-between bg-pink-100 shadow-lg ">
       <div>
         <Link to="/">
-          <img className="w-28 m-2" src={LOGO_URL} alt="logo" />
+          <img className="w-28 m-2 mx-3" src={logo} alt="logo" />
         </Link>
       </div>
       <div className="flex items-center">
@@ -42,7 +43,9 @@ const Header = () => {
             </Link>
           </li>
           <li className="px-4 hover:text-red-600 font-bold text-xl">
-            <Link to="/cart" className="link">Cart ({cartItems.length} items)</Link>
+            <Link to="/cart" className="link">
+              Cart ({cartItems.length} items)
+            </Link>
           </li>
           <button
             className="login-btn"

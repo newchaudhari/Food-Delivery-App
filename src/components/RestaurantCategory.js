@@ -1,5 +1,4 @@
 import ItemList from "./ItemList";
-import { useState } from "react";
 
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
@@ -13,7 +12,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
           onClick={handleClick}
         >
           <span className="font-bold text-lg">
-            {data?.title} ({data.itemCards.length}){" "}
+            {data?.title} ({data?.itemCards?.length}){" "}
           </span>
           <span>🔽</span>
         </div>
