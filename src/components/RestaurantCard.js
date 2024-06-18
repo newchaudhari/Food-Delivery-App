@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
   const { loggedInUser } = useContext(UserContext);
 
   return (
-    <div className="m-2 p-3 w-[200px] h-[350px] border-gray-50 rounded-lg shadow-lg bg-gray-100 hover:bg-gray-300 overflow-hidden break-words">
+    <div data-testid="resCard" className="mx-3 my-4 p-3 w-[220px] h-[350px] border-gray-50 rounded-lg shadow-lg bg-gray-100 hover:bg-gray-300 ">
       <img
         className="w-full h-[150px] rounded-sm"
         src={CDN_URL + cloudinaryImageId}
