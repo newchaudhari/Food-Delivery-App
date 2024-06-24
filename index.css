@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-linear-gradient {
+    @apply bg-gradient-to-r from-[#eff1f3] via-[#e2e2e2] to-[#eff1f3];
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -64rem /* -1024px */;
+  }
+  100% {
+    background-position: 64rem /* 1024px */;
+  }
+}
+.animate-shimmer {
+  animation: shimmer 4s infinite linear;
+}
