@@ -22,6 +22,7 @@ const Body = () => {
     );
 
     const jsonData = await data.json();
+    console.log(jsonData);
     setRestaurantList(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -79,7 +80,8 @@ const Body = () => {
           >
             Top Rated
           </button>
-          <div>
+
+          {/* <div>
             <label>Username : </label>
             <input
               type="text"
@@ -89,7 +91,8 @@ const Body = () => {
                 setUserName(e.target.value);
               }}
             />
-          </div>
+          </div> */}
+
         </div>
       </div>
       <div className="flex flex-wrap px-8 py-3  m-2">

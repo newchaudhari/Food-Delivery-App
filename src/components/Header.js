@@ -1,15 +1,18 @@
 import LOGO from "../../assets/logo.png";
-import { LOGO_URL } from "../utils/constants";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import {
+  ShoppingCartOutlined,
+  ContactPageOutlined,
+  HomeOutlined,
+  AccountCircleOutlined,
+} from "@mui/icons-material";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
-  const onlineStatus = useOnlineStatus();
-  const { loggedInUser } = useContext(UserContext);
+  // const onlineStatus = useOnlineStatus();
+  // const { loggedInUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
@@ -20,42 +23,45 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex items-center">
-        <ul className="flex p-4 m-4 text-xl ">
-          <li className="px-4">Online Status : {onlineStatus ? "✅" : "🔴"}</li>
-          <li className="px-4 hover:text-red-600">
+        <ul className="flex p-4 m-4 text-xl justify-center">
+          <li className="px-4 mx-4 hover:text-blue-700">
             <Link to="/" className="link">
-              Home
+              <HomeOutlined fontSize="large" />
             </Link>
           </li>
-          <li className="px-4 hover:text-red-600">
-            <Link to="/about" className="link">
-              About
-            </Link>
-          </li>
-          <li className="px-4 hover:text-red-600">
+
+          <li className="px-4 mx-4 hover:text-blue-700">
             <Link to="/contact" className="link">
-              Contact Us
+              <ContactPageOutlined fontSize="large" />
             </Link>
           </li>
-          <li className="px-4 hover:text-red-600">
-            <Link to="/grocery" className="link">
-              Grocery
+
+          <li className="px-4 mx-4 hover:text-blue-700">
+            <Link to="/cart" className="link relative flex">
+              <ShoppingCartOutlined fontSize="large" />
+              <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                {cartItems.length}
+              </span>
             </Link>
           </li>
-          <li className="px-4 hover:text-red-600 font-bold text-xl">
-            <Link to="/cart" className="link">
-              Cart ({cartItems.length} items)
-            </Link>
-          </li>
+
           <button
-            className="login-btn"
+            className="rounded-lg mx-4 px-3 bg-green-200 font-bold hover:bg-green-400"
             onClick={() => {
               btn === "Login" ? setBtn("Logout") : setBtn("Login");
             }}
           >
             {btn}
           </button>
-          <li className="px-4 font-bold">{loggedInUser}</li>
+
+          <li className="px-4 mx-4 hover:text-blue-700">
+            <Link to={"/about"}>
+              <AccountCircleOutlined fontSize="large" />
+            </Link>
+          </li>
+
+          {/* We can show User name on header
+        <li className="px-4 font-bold">{loggedInUser}</li>*/}
         </ul>
       </div>
     </div>

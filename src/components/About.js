@@ -6,7 +6,6 @@ class About extends React.Component {
     return (
       <div className="text-center m-4">
         <h1 className="text-3xl font-bold">About</h1>
-        <h2 className="text-xl font-bold">Namaste React Course</h2>
         <UserClass name={"First"} location={"Pune"} contact={"@newchaudhari"} />
       </div>
     );
